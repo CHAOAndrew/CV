@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>self-discipline so-serious</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Futura', sans-serif; /* 设置字体 */
+        }
+
+        .wrapper {
+            width: 80vw; /* 设置宽度为视口的80% */
+            margin: 0 auto; /* 居中 */
+            height: 100vh; /* 让它高度占满视口 */
+            position: relative; /* 确保内部元素可以使用绝对定位 */
+            border: 1px solid black;
+        }
+
+        body {
+            width: 100vw; /* 设置页面宽度为视口宽度 */
+            height: 100vh; /* 设置页面高度为视口高度 */
+            margin: 0;
+        }
+
+        .homepostabout {
+            border: 1px solid black;
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 20px; /* 调整顶部距离 */
+            right: 20px; /* 调整右侧距离 */
+            padding: 10px; /* 给内部内容一些填充 */
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around; /* 让 li 之间等间距排列 */
+            width: 100%;
+        }
+        .headerright ul{
+            list-style-type:decimal;
+            margin-left: 0.4px;
+        }
+
+        /* Home 默认加粗 */
+        .homepostabout li:first-child {
+            font-weight: bold;
+        }
+
+        /* 悬停时加粗 */
+        .homepostabout li:hover {
+            font-weight: bold;
+        }
+
+        .header {
+            height: 600px;
+            border: 1px solid pink;
+            display: flex;
+            align-items: flex-start; /* 顶部对齐 */
+            padding: 20px; /* 给header一些内边距 */
+        }
+
+        .header .headerleft img:nth-child(1) {
+            width: 500px; /* 设置图片宽度 */
+            height: 500px; /* 设置图片高度，确保为正方形 */       
+            object-fit: cover; /* 图片适应容器，保持比例，不变形 */
+            border-radius: 50%; /* 圆角 */
+            margin-right: 20px; /* 图片和文本之间的间距 */
+            margin-top: 30px;
+        }
+        
+        .header img:nth-child(2) {
+            width: 400px; /* 设置图片宽度 */
+            height: 400px; /* 设置图片高度，确保为正方形 */       
+            margin-left: 20px; /* 图片和文本之间的间距 */
+            margin-top: -100px;
+        }
+
+
+        .Hello {
+            font-size: 60px; /* 设置文本大小 */
+            margin-top: 70px;
+            margin-left: 20px;
+            margin-right: 40px; /* 添加右边距以增加与签名图片的间距 */
+        }
+        
+        .normal-img {
+            width: 400px; /* 自定义宽度 */
+            height: auto; /* 自动高度，保持比例 */
+            object-fit: contain; /* 保持图片的原始比例，不裁剪 */
+            border-radius: 0; /* 确保没有圆角 */
+            margin-right: 20px; /* 保持图片之间的间距 */
+            margin-bottom: -100px;
+        }
+        .AKA{
+            align-self: flex-start;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+        .desire{
+            align-self: flex-start;
+            font-size: 18px;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        .AKA a {
+            text-decoration: none; /* 去除下划线 */
+        }
+        .headerright h2{
+            font-size: 30px;
+            font-weight: normal;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        .headerright ul{
+            line-height: 59px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            font-size: 18px;
+            width: 800px;
+            height: 85px;
+            /* border: 1px black solid; */
+            margin-left: 20px;
+            align-items: center;
+
+        }
+        .headerright ul li{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 200px;
+            height: 50px;
+            /* border: 2px black solid; */
+            /* text-align: center; */
+            font-size: 22px;
+            /* display: flex; */
+        }
+        .shell {
+            height: 100vh;
+            display: flex;
+        }
+     
+
+        .box {
+            flex: 1;
+            min-width: 0;
+            box-shadow: -20px 0 20px 5px rgba(255, 255, 255, 0.7);
+            transition: flex 0.8s;
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            place-items: center;
+            border: 10px solid #fff;
+        }
+
+        .box:hover {
+            flex: 2;
+        }
+
+        .box:hover .text {
+            animation: appear 0.8s forwards 0.3s;
+        }
+
+        .img1 {
+            background-image: url(./健身\ bei.JPG);
+        }
+
+        .img2 {
+            background-image: url(./健身\ 蜘蛛侠.JPG);
+        }
+
+        .img3 {
+            background-image: url(./东信二头展示.JPG);
+        }
+
+        .img4 {
+            background-image: url(./红辣椒.jpg);
+        }
+
+        .text {
+            padding: 45px 75px;
+            opacity: 0;
+            color: rgb(255, 255, 255);
+            height: 380px;
+            width: 600px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            height: 73px;
+            font-size: 65px;
+            font-family: 华文中宋;
+            line-height: 65px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+
+        .title {
+            display: inline-block;
+            height: 65px;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 4px;
+        }
+
+        .num {
+            margin-left: -18px;
+        }
+
+        .text p {
+            margin: 30px 0;
+            font-size: 30px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        .head-wenzi ul {
+            list-style-type: none; /* 取消小圆点 */
+            padding: 0;
+            margin: 0;
+            display: flex; /* 使用 flexbox 布局，让列表项排成一行 */
+            justify-content: left; /* 让项目左对齐 */
+        }
+
+        .head-wenzi li :nth-child(1){
+            font-size: 1opx;
+            width: 100px;
+            text-align: center;
+            border: 1px solid black;
+            margin-right: 10px; /* 添加间距 */
+            
+        }
+
+        .head-wenzi li {
+            font-size: 20px;
+            width: 100px;
+            text-align: center;
+            border: 1px solid black;
+            margin-right: 10px; /* 添加间距 */
+            align-items: center;
+            
+        }
+
+
+    
+        .head-wenzi{
+            display: flex;
+            justify-content:left;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="headerleft">
+                <img src="./DSC03458.JPG" alt="">
+            </div>
+            
+            <div class="homepostabout">
+                <ul>
+                    <li>Home</li>
+                    <li>Post</li>
+                    <li>About</li>
+                </ul>
+            </div>
+            <div class="headerright">
+                <div class="Hello">Hello, I'm &nbsp; 🇨🇳</div>
+                <img class="normal-img" src="./张超签名.PNG" alt="">        
+                <div class="AKA"> AKA. ANDREW - <a href="https://en.wikipedia.org/wiki/Geek">GEEK</a></div>
+                <div class="desire">Nursing a desire to experience the world 🌍,currently residing in Hangzhou China</div>
+                <h2>
+                    And something I can do for you guys:
+                </h2>
+                <ul>
+                    <li>mental support</li>
+                    <li>photography</li>
+                    <li>muscle-building</li>
+                    <li>computernization</li>
+                
+                    <li>Game </li>
+                    <li>Sports </li>
+                    <li>Hanging out</li>
+                    <li>Music</li>
+                </ul>
+            </div>
+
+            
+        </div>
+        <div class="shell">
+            <div class="box img1">
+                <div class="text">
+                    <header>
+                        <span class="title">NO.</span>
+                        <span class="num">1</span>
+                    </header>
+                    <p>
+                        Muscle-Building
+                    </p>
+                </div>
+            </div>
+            <div class="box img2">
+                <div class="text">
+                    <header>
+                        <span class="title">NO.</span>
+                        <span class="num">2</span>
+                    </header>
+                    <p>
+                        Photography
+                    </p>
+                </div>
+            </div>
+            <div class="box img3">
+                <div class="text">
+                    <header>
+                        <span class="title">NO.</span>
+                        <span class="num">3</span>
+                    </header>
+                    <p>
+                        Hanging out
+                    </p>
+                </div>
+            </div>
+            <div class="box img4">
+                <div class="text">
+                    <header>
+                        <span class="title">NO.</span>
+                        <span class="num">4</span>
+                    </header>
+                    <p>
+                        Gaming
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</body>
+</html>
